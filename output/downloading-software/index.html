@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  lang=""
+  xml:lang=""
+  >
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+           <title>Downloading software is more complicated than it should be</title>
+    <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+      div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+      ul.task-list{list-style: none;}
+      .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    </style>
+        <link rel="stylesheet" href="../style/bulma.css" />
+        <link rel="stylesheet" href="../style/custom.css" />
+     
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+    
+  </head>
+  <body>
+         <!-- <header id="title-block-header">
+      <h1 class="title">Downloading software is more complicated than it should be</h1>
+            </header> -->
+    <section class="section">
+      <div class="container">
+        <div class="content">
+                      <p style="text-align: center"><a href="../class-01/">← back to class-01</a></p>
+          
+                      <h1>Downloading software is more complicated than it should be</h1>
+                         <nav id="TOC" role="doc-toc">
+                            <!-- <p class="toc-title">Jump to section</p> -->
+               <ul>
+<li><a href="#what-is-signed-unsigned-or-notarized-software">What is signed, unsigned, or notarized software?</a></li>
+<li><a href="#different-kinds-of-releases">Different kinds of releases</a></li>
+<li><a href="#version-numbers">Version numbers</a></li>
+</ul>
+            </nav>
+            
+<h2 id="what-is-signed-unsigned-or-notarized-software">What is signed, unsigned, or notarized software?</h2>
+<p>These days Windows and OS X love to hate you for downloading random software from the internet. They want you to use an app store, or only download software from people who paid them money to verify the developer’s identity.</p>
+<p>Yes, this is great for making sure you don’t run random evil software on your computer, but it’s a pain for us! People who make free software often don’t want to jump through extra hoops to get in an app store or pay money to verify their identities. They made free software, so why are you going to ask anything else of them?</p>
+<p>OS X is especially awful about this: when you download software from the internet, your computer might just <strong>refuse to run it</strong> when you double-click. On top of that, it doesn’t suggest any way to get around that restriction!</p>
+<p><strong>To force OS X to software it doesn’t want to run, right-click (aka control+click) and select Open from the menu</strong>. You’ll see a popup that’s <em>slightly</em> different than the rejection one - this one has an <strong>Open</strong> or <strong>OK</strong> button you can click, and then the software can run.</p>
+<h2 id="different-kinds-of-releases">Different kinds of releases</h2>
+<p>When you’re a fancy technical person downloading fancy technical software, they force you to make decisions. While sometimes the option is easy - Python <code>3.8</code> is clearly better than <code>2.7</code>, sometimes it’s a little more complex.</p>
+<ul>
+<li><strong>Stable</strong> or <strong>release</strong> versions are the normal-person version of the software. You should probably download this one.</li>
+<li><strong>Pre-release</strong>, <strong>nightly</strong> and <strong>release candidate</strong> (aka <strong>RC</strong>) are newer versions, but you think of them as “beta” versions - more features but less tested. You should generally steer clear of these, as you probably don’t need the new features!</li>
+<li><strong>LTR</strong> or <strong>long-term release</strong> versions are the most stable. They’re usually for companies and IT people who are very grumpy and cautious about upgrades.</li>
+</ul>
+<h2 id="version-numbers">Version numbers</h2>
+<p>Much software these days roughly follows something called <strong>semantic versioning</strong> or <strong>SemVer</strong>. When you see <code>3.8.10</code>, the order of the numbers is meaningful!</p>
+<ul>
+<li><code>3</code> is the <strong>major version number</strong>. When the major version number goes up, insane things probably change. You really want to pay attention if you’re upgrading across major version numbers.</li>
+<li><code>8</code> is the <strong>minor version number</strong>. Going from <code>8</code> to <code>9</code> probably includes new features, but isn’t a big overhaul.</li>
+<li><code>10</code> is the <strong>patch number</strong>. It has all the same features, but bugs are fixed compared to the previous patch number.</li>
+</ul>
+<p>For example, if you’re using Python <code>3.10.0</code> you probably have good reason to be nervous: while it has cool new features compared to anything in the <code>3.9.x</code> series, the fact that the patch number is <code>0</code> means they haven’t started fixing bugs yet!</p>
+<blockquote>
+<p>Well, kind of! Before <code>3.10.0</code> was released they had, for example, <code>3.10.0rc1</code>, which was the <em>release candidate</em> version of <code>3.10.0</code>. People more adventurous than us probably used it, found some bugs, and had them fixed before the <em>stable</em> version of <code>3.10.0</code> made it out into the world.</p>
+</blockquote>
+        </div>
+      </div>
+    </section>
+    
+  </body>
+</html>

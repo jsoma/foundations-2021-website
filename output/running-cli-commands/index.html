@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  lang=""
+  xml:lang=""
+  >
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+           <title>How to not screw up running commands on the command line</title>
+    <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+      div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+      ul.task-list{list-style: none;}
+      .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    </style>
+        <link rel="stylesheet" href="../style/bulma.css" />
+        <link rel="stylesheet" href="../style/custom.css" />
+     
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+    
+  </head>
+  <body>
+         <!-- <header id="title-block-header">
+      <h1 class="title">How to not screw up running commands on the command line</h1>
+            </header> -->
+    <section class="section">
+      <div class="container">
+        <div class="content">
+                      <p style="text-align: center"><a href="../class-01/">← back to class-01</a></p>
+          
+                      <h1>How to not screw up running commands on the command line</h1>
+                         <nav id="TOC" role="doc-toc">
+                            <!-- <p class="toc-title">Jump to section</p> -->
+               <ul>
+<li><a href="#copying-and-pasting-from-the-internet">Copying and pasting from the internet</a></li>
+<li><a href="#something-has-gone-wrong">Something has gone wrong!</a></li>
+</ul>
+            </nav>
+            
+<h2 id="copying-and-pasting-from-the-internet">Copying and pasting from the internet</h2>
+<p>When you see instructions about how to do this-or-that on the internet, sometimes they include commands to run on the command line (or terminal or bash or the shell or whatever you want to call it). These commands often are shown like this:</p>
+<pre><code>$ pyenv global 3.10.0</code></pre>
+<p>There’s an important secret they often don’t tell you, though, about how to cut and paste it: <strong>don’t include the <code>$</code> part</strong>. That just means, “this is a command you run in a shell.” That way you know it isn’t some Python code or a SQL command or anything like that!</p>
+<h3 id="but-wait">But wait!</h3>
+<p>…except, not always! <strong>Don’t listen to my advice too strictly.</strong> Let’s say you have a command that looks like this:</p>
+<pre><code>echo &#39;export PYENV_ROOT=&quot;$HOME/.pyenv&quot;&#39; &gt;&gt; ~/.zshrc
+echo &#39;export PATH=&quot;$PYENV_ROOT/bin:$PATH&quot;&#39; &gt;&gt; ~/.zshrc</code></pre>
+<p>In this case, the dollar sign is in the middle of the line. In this case, it doesn’t mean “this is a command for terminal,” it’s actually doing something useful! Cut and paste both lines completely.</p>
+<p><strong>Only ignore the <code>$</code> if it comes at the very beginning of the command</strong>. Complicated and awful, yes, and I apologies for the entire internet.</p>
+<h2 id="something-has-gone-wrong">Something has gone wrong!</h2>
+<p>A big issue is accidentally cutting and pasting something incorrectly. Sometimes you’ll end up in a situation like this, where you keep hitting enter and either <em>nothing is happening</em> or it keeps saying the this <code>dquote&gt;</code> thing. It might also say <code>bquote&gt;</code> or <code>quote&gt;</code> or all sorts of other things.</p>
+<p>Like this:</p>
+<pre><code>echo &quot;hi frien
+dquote&gt; 
+dquote&gt; 
+dquote&gt; 
+dquote&gt; 
+dquote&gt; 
+dquote&gt; </code></pre>
+<p>Basically, this means one thing: you screwed up! You started typing something, it never finished, and the computer thinks you’re still trying to type a command. In this case it’s waiting for me to type another <code>"</code>.</p>
+<p>If your command line ever seems too busy to do anything for you, <strong>you can escape by holding control and pressing C</strong>. I’ll usually call this <strong>Ctrl+C</strong>, because that’s… what it’s called. It will help you escape almost everything!</p>
+        </div>
+      </div>
+    </section>
+    
+  </body>
+</html>

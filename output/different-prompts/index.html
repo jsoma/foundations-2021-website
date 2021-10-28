@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  lang=""
+  xml:lang=""
+  >
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+           <title>Understanding the different prompts on the command line</title>
+    <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+      div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+      ul.task-list{list-style: none;}
+      .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    </style>
+        <link rel="stylesheet" href="../style/bulma.css" />
+        <link rel="stylesheet" href="../style/custom.css" />
+     
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+    
+  </head>
+  <body>
+         <!-- <header id="title-block-header">
+      <h1 class="title">Understanding the different prompts on the command line</h1>
+            </header> -->
+    <section class="section">
+      <div class="container">
+        <div class="content">
+                      <p style="text-align: center"><a href="../class-01/">← back to class-01</a></p>
+          
+                      <h1>Understanding the different prompts on the command line</h1>
+                         <nav id="TOC" role="doc-toc">
+                            <!-- <p class="toc-title">Jump to section</p> -->
+               <ul>
+<li><a href="#comparing-prompts">Comparing prompts</a></li>
+<li><a href="#getting-into-and-out-of-the-python-repl">Getting into (and out of) the Python REPL</a></li>
+<li><a href="#getting-into-and-out-of-the-postgres-prompt">Getting into (and out of) the Postgres prompt</a></li>
+<li><a href="#other-prompts-that-arent-prompts">Other prompts (that aren’t prompts)</a></li>
+</ul>
+            </nav>
+            
+<h2 id="comparing-prompts">Comparing prompts</h2>
+<p><strong>The “prompt” is the thing to the left of your cursor.</strong> Based on what prompt you see, you’re allowed to do different things. Maybe you’re able to run command line commands, or Python commands, or SQL commands.</p>
+<p>But you can’t use them all at once, they all need different prompts! Think of it as getting into Python mode, or SQL mode, or command line mode.</p>
+<h3 id="command-line">Command line</h3>
+<p>If you’re in the <strong>command line prompt</strong>, it could look like just about anything. It’s usually pretty long, though, and usually has your username in it:</p>
+<pre><code>soma@skatert ~ % pwd
+/Users/soma
+soma@skatert ~ %</code></pre>
+<p>This is what comes up by default when you open Cmder or Terminal, and it also usually comes up when you quit Python or Postgres (see below). You can run commands like <code>ls</code> or <code>cd</code> here.</p>
+<h3 id="python-interactive-prompt">Python interactive prompt</h3>
+<p>If you’re in the <strong>Python interactive prompt</strong> (aka the <strong>Python REPL</strong>), each line will start with a lot of greater-than symbols.</p>
+<pre><code>&gt;&gt;&gt; print(&quot;hello&quot;)
+hello
+&gt;&gt;&gt; </code></pre>
+<p>If you’re here, you can run Python one line at a time. Running Python one line at a time isn’t very useful, though, and if you end up there it’s usually by accident!</p>
+<h3 id="postgres-client">Postgres client</h3>
+<p>If you’re in the <strong>Postgres (or PostgreSQL) client</strong>, each line will start with your username (or <code>postgres</code>) and an <code>=#</code>.</p>
+<pre><code>soma=# \l
+                         List of databases
+   Name    | Owner | Encoding | Collate | Ctype | Access privileges 
+-----------+-------+----------+---------+-------+-------------------
+ postgres  | soma  | UTF8     | C       | C     | 
+ soma      | soma  | UTF8     | C       | C     | 
+ template0 | soma  | UTF8     | C       | C     | =c/soma          +
+           |       |          |         |       | soma=CTc/soma
+ template1 | soma  | UTF8     | C       | C     | =c/soma          +
+           |       |          |         |       | soma=CTc/soma
+(4 rows)
+soma=# </code></pre>
+<p>The PostgreSQL prompt is good for running SQL commands. <em>Yes</em>, there are ways of doing it that don’t involve the command line, but <em>yes</em>, we’re hiding it from you right now.</p>
+<h3 id="none-of-those">None of those!</h3>
+<p>If you see some other sort of prompt – maybe <code>&gt;dquote</code> or <code>&gt;quote</code> or <code>&gt;bquote</code> – or nothing at all is happening when you type, slam <strong>Ctrl+C</strong> and try to escape from whatever you’re in. It will… maybe work.</p>
+<p>Fun and confusing, right?</p>
+<h2 id="getting-into-and-out-of-the-python-repl">Getting into (and out of) the Python REPL</h2>
+<p>When you type <code>python --version</code> on the command line it shows you the version of Python.</p>
+<pre><code>$ python --version
+Python 3.10.0</code></pre>
+<p>If you just type <code>python</code>, though, something totally different happens!</p>
+<pre><code>soma@skatert ~ % python
+Python 3.10.0 (default, Oct 27 2021, 12:08:22) [Clang 12.0.0 (clang-1200.0.32.29)] on darwin
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt; </code></pre>
+<p>This is called the <strong>interactive prompt</strong> or the <strong>REPL</strong> or probably a hundred other things. It’s a place you can run Python code, one line at a time.</p>
+<pre><code>&gt;&gt;&gt; 2+2
+4
+&gt;&gt;&gt; 0.1 + 0.2
+0.30000000000000004
+&gt;&gt;&gt; </code></pre>
+<p>But the thing is, <strong>you can only run Python code in here.</strong> Nothing else! If you try to use <code>cd</code> or <code>ls</code> or any of that, you’re out of luck and it’ll just scream at you. It only knows Python!</p>
+<pre><code>&gt;&gt;&gt; ls
+Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+NameError: name &#39;ls&#39; is not defined</code></pre>
+<p>To exit the REPL, you’ll try to type <code>exit</code>.</p>
+<pre><code>&gt;&gt;&gt; exit
+Use exit() or Ctrl-D (i.e. EOF) to exit</code></pre>
+<h3 id="exiting-the-python-repl">Exiting the Python REPL</h3>
+<p>To actually exit the Python interactive prompt, you’ll need to type <code>exit()</code> instead.</p>
+<pre><code>&gt;&gt;&gt; exit()
+$</code></pre>
+<p>And then you’ll be back at your normal shell!</p>
+<h2 id="getting-into-and-out-of-the-postgres-prompt">Getting into (and out of) the Postgres prompt</h2>
+<p>If you want to find the version of postgres you’re using, you can use <code>psql --version</code>.</p>
+<p><code>$ psql --version psql (PostgreSQL) 14.0</code></p>
+<p>If you type <code>psql</code>, though, you’ll (maybe, possibly) end up at the <strong>Postgres prompt</strong>. You might also type <code>psql -U postgres</code> to get here, I dunno.</p>
+<p>```$ psql psql (14.0) Type “help” for help.</p>
+<p>postgres=#</p>
+<pre><code>
+When you&#39;re here, you can only run postgres commands!
+
+### Exiting the Postgres promnpt
+
+To exit the postgres prompt, you can type `\q`. It&#39;ll take you right back to the command line.
+</code></pre>
+<p>soma@skatert ~ % psql psql (14.0) Type “help” for help.</p>
+<p>soma=#  soma@skatert ~ % ```</p>
+<p>I swear sometimes <code>exit</code> works but I honestly don’t know anything.</p>
+<h2 id="other-prompts-that-arent-prompts">Other prompts (that aren’t prompts)</h2>
+<p>If you see <code>dquote&gt;</code> or <code>bquote&gt;</code> or <code>quote&gt;</code> or anything like that, it isn’t actually a prompt! It’s a command that never finished getting typed.</p>
+<p>Check out <a href="..running-cli-commands/#something-has-gone-wrong">this page for a fix</a> or press <strong>ctrl+C</strong>.</p>
+        </div>
+      </div>
+    </section>
+    
+  </body>
+</html>

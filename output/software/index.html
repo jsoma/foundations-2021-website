@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  lang=""
+  xml:lang=""
+  >
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+           <title>Installing software</title>
+    <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+      div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+      ul.task-list{list-style: none;}
+      .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    </style>
+        <link rel="stylesheet" href="../style/bulma.css" />
+        <link rel="stylesheet" href="../style/custom.css" />
+     
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+    
+  </head>
+  <body>
+         <!-- <header id="title-block-header">
+      <h1 class="title">Installing software</h1>
+            </header> -->
+    <section class="section">
+      <div class="container">
+        <div class="content">
+                      <p style="text-align: center"><a href="../class-01/">← back to class-01</a></p>
+          
+                      <h1>Installing software</h1>
+                         <nav id="TOC" role="doc-toc">
+                            <!-- <p class="toc-title">Jump to section</p> -->
+               <ul>
+<li><a href="#slack-your-chat-software">Slack, your chat software</a></li>
+<li><a href="#postgresql-your-database-server">PostgreSQL, your database server</a></li>
+<li><a href="#visual-studio-code-your-text-editor">Visual Studio Code, your text editor</a></li>
+</ul>
+            </nav>
+            
+<h2 id="slack-your-chat-software">Slack, your chat software</h2>
+<p><a href="https://slack.com/downloads">Slack</a> is a messaging app that helps teams manage communications. Despite the fact that every month someone writes an article about how awful it is, very human being on earth seems to use it anyway.</p>
+<p>Our Slack is located at <a href="https://ledeprogram.slack.com/">ledeprogram.slack.com</a>. Create an account using your Columbia email address.</p>
+<blockquote>
+<p>Even if you’re using your Columbia email, your Slack account is <strong>not</strong> the same as your Columbia account. You can use your Columbia email address, but you need to create a new Slack account.</p>
+</blockquote>
+<p>Slack is the primary place for communication outside of class.</p>
+<ul>
+<li><code>#data-ms-2022</code> is a general channel</li>
+<li><code>#foundations</code> and <code>#data-and-databases</code> are for their respective classes</li>
+<li><code>#events</code> is for, yes, events that are happening</li>
+<li><code>#jobs</code> is for job postings</li>
+<li><code>#coding</code> is for coding questions not related to classwork/homework. Students from prior years hang out in there (and in other channels), too.</li>
+</ul>
+<p>You might want to check out <a href="https://get.slack.help/hc/en-us/articles/218080037-Getting-started-for-new-users">Getting started for new users</a> to learn the ins and outs of Slack.</p>
+<h2 id="postgresql-your-database-server">PostgreSQL, your database server</h2>
+<p>PostgreSQL (or Postgres) is a kind of database. You’ll like it.</p>
+<h3 id="installing-on-os-x">Installing on OS X</h3>
+<p>There are a few ways to install PostgreSQL on OS X, but we’re going to go with <a href="https://postgresapp.com/downloads.html">Postgres.app</a>. Just download the most recent one.</p>
+<blockquote>
+<p>Whenever you want Postgres to be running, run the app.</p>
+</blockquote>
+<p>To run the psql client which lets you ask the database for information, open the app and double-click the database you’re interested in.</p>
+<h3 id="installing-on-windows">Installing on Windows</h3>
+<p>We’re going to install the boring official Postgres install from <a href="https://www.enterprisedb.com/downloads/postgres-postgresql-downloads">here</a>. You’ll be able to pick between “Windows x86-64” (aka 64-bit) and “Windows x86-32” (aka 32-bit) - try to install the 11.3 64-bit version first, if it doesn’t work you can do 10.8 32-bit version.</p>
+<p><strong>During installation, you <em>might</em> be able to choose several options:</strong></p>
+<ul>
+<li>If it asks you what pieces you want to install, you might as well say all of them.</li>
+<li>At the end of the install, it might ask you if you want to install some related software. You can say no to this one.</li>
+<li>Unless you have a good memory, set the password to <code>postgres</code> so we don’t have to reset it later!</li>
+</ul>
+<blockquote>
+<p>When you want to access the database, you could just run <code>psql</code> from the start menu. There’s a chance it’ll give you an error, though: in order to make that error go away, you need to open the cmd from the start menu, <code>run chcp 1252</code>, then run <code>psql -U postgres</code>. We’ll talk about why in our second class.</p>
+</blockquote>
+<h2 id="visual-studio-code-your-text-editor">Visual Studio Code, your text editor</h2>
+<p>We’re going to use <a href="https://code.visualstudio.com/">Visual Studio Code</a> to program in. Download and install it just like normal software. Later you’ll want to set up a plugin or two.</p>
+<p>There are a lot of Python-specific tools one can use to write code - <a href="https://www.jetbrains.com/pycharm/">PyCharm</a>, <a href="https://realpython.com/python-idle/">IDLE</a>, blah blah blah, but because we like to fit in with the rest of the world we’re settling for VS Code.</p>
+        </div>
+      </div>
+    </section>
+    
+  </body>
+</html>

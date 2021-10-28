@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  lang=""
+  xml:lang=""
+  >
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+           <title>What is the PATH? And how to set your PATH</title>
+    <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+      div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+      ul.task-list{list-style: none;}
+      .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    </style>
+        <link rel="stylesheet" href="../style/bulma.css" />
+        <link rel="stylesheet" href="../style/custom.css" />
+     
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+    
+  </head>
+  <body>
+         <!-- <header id="title-block-header">
+      <h1 class="title">What is the PATH? And how to set your PATH</h1>
+            </header> -->
+    <section class="section">
+      <div class="container">
+        <div class="content">
+                      <p style="text-align: center"><a href="../class-01/">← back to class-01</a></p>
+          
+                      <h1>What is the PATH? And how to set your PATH</h1>
+                         <nav id="TOC" role="doc-toc">
+                            <!-- <p class="toc-title">Jump to section</p> -->
+               <ul>
+<li><a href="#setting-your-path-in-os-x">Setting your PATH in OS X</a></li>
+<li><a href="#settings-your-path-in-windows">Settings your PATH in Windows</a></li>
+</ul>
+            </nav>
+            
+<p>When you go to look for a hairbrush, it could be a in a few places. Maybe in your bathroom cabinet, maybe on the sink, maybe in your bedroom. Probably not on top of the ceiling fan, probably not in a bag of sugar.</p>
+<p>When you type a command on your computer – like, say, <code>hairbrush</code> – the computer doesn’t look in every single place that exists on your computer. Instead, it goes down a list of places called the <code>PATH</code> that contain software it can run.</p>
+<p>The biggest issue you’ll have in your entire life is <strong>your command line not being able to find software after you’ve installed it.</strong> Generally this is a PATH issue: if the bathroom sink isn’t listed on the PATH, your computer will never find the hairbrush!</p>
+<h2 id="setting-your-path-in-os-x">Setting your PATH in OS X</h2>
+<p>The PATH is generally set in the <code>.bashrc</code>/<code>.bash_profile</code> or <code>.zprofile</code>/<code>.zshrc</code> files, depending on <a href="../bash-vs-zsh">which shell you have</a>.</p>
+<p>There’s usually a line that says something like</p>
+<pre><code>export PATH=/usr/local/bathroom_sink:$PATH</code></pre>
+<p>which adds the <code>/usr/local/bathroom_sink</code> directory to your PATH.</p>
+<h2 id="settings-your-path-in-windows">Settings your PATH in Windows</h2>
+<p>This is not as fun! In Windows you get to click around and manage <strong>environment variables</strong>.</p>
+        </div>
+      </div>
+    </section>
+    
+  </body>
+</html>

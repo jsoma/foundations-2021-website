@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  lang=""
+  xml:lang=""
+  >
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+           <title>Startup files for shells</title>
+    <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+      div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+      ul.task-list{list-style: none;}
+      .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    </style>
+        <link rel="stylesheet" href="../style/bulma.css" />
+        <link rel="stylesheet" href="../style/custom.css" />
+     
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+    
+  </head>
+  <body>
+         <!-- <header id="title-block-header">
+      <h1 class="title">Startup files for shells</h1>
+            </header> -->
+    <section class="section">
+      <div class="container">
+        <div class="content">
+                      <p style="text-align: center"><a href="../class-01/">← back to class-01</a></p>
+          
+                      <h1>Startup files for shells</h1>
+             
+<p>Each time you open the command line (aka the command prompt, the terminal, and a billion other names), it runs a few commands to set itself up.</p>
+<p>This setup usually involves setting the <code>PATH</code> up so it knows where to find software, asking <code>pyenv</code> what the default Python should be, and a handful of other tasks. It isn’t a fancy process, but it’s necessary!</p>
+<p>Depending on <a href="../bash-vs-zsh">which shell you use</a>, you’ll have a different set of startup files.</p>
+<ul>
+<li><strong>bash</strong> uses <code>.bash_profile</code> and <code>.bashrc</code></li>
+<li><strong>zsh</strong> uses <code>.zprofile</code> and <code>.zshrc</code></li>
+</ul>
+<p>Sometimes when you’re setting up software, you’ll see mentions of these kinds of files:</p>
+<pre><code>echo &#39;export PYENV_ROOT=&quot;$HOME/.pyenv&quot;&#39; &gt;&gt; ~/.zshrc
+echo &#39;export PATH=&quot;$PYENV_ROOT/bin:$PATH&quot;&#39; &gt;&gt; ~/.zshrc
+echo -e &#39;if command -v pyenv 1&gt;/dev/null 2&gt;&amp;1; then\n  eval &quot;$(pyenv init --path)&quot;\nfi&#39; &gt;&gt; ~/.zshrc</code></pre>
+<p>If you ignore everything that you don’t understand (which is most of it), you can probably guess that the code is doing something to <code>.zshrc</code> to help set up <code>pyenv</code> every time you start up a new shell. <strong>And you’d be right!</strong></p>
+<p>It’s asking to edit <code>.zshrc</code> instead of <code>.bash_profile</code> because you’re probably using a newer mac that <a href="../bash-vs-zsh">has zsh instead of bash</a>!</p>
+<blockquote>
+<p>Notice there are two setup files for each shell! One includes the word <code>profile</code> and the other <code>rc</code>. Okay, now <strong>forget about that forever.</strong> There’s no real difference between them, and they both get run.</p>
+</blockquote>
+<p>You can easily edit these files in Visual Studio Code.</p>
+        </div>
+      </div>
+    </section>
+    
+  </body>
+</html>

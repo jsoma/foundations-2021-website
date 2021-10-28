@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  lang=""
+  xml:lang=""
+  >
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+           <title>Why you should never use sudo</title>
+    <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+      div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+      ul.task-list{list-style: none;}
+      .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    </style>
+        <link rel="stylesheet" href="../style/bulma.css" />
+        <link rel="stylesheet" href="../style/custom.css" />
+     
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+    
+  </head>
+  <body>
+         <!-- <header id="title-block-header">
+      <h1 class="title">Why you should never use <code>sudo</code></h1>
+            </header> -->
+    <section class="section">
+      <div class="container">
+        <div class="content">
+                      <p style="text-align: center"><a href="../class-01/">← back to class-01</a></p>
+          
+                      <h1>Why you should never use sudo</h1>
+             
+<h3 id="what-is-sudo-and-why-do-you-use-it">What is sudo, and why do you use it?</h3>
+<p>50% of the time you try to find the answer to a problem you have, the answer is “oh just run the command again, but put <code>sudo</code> in front of it!” Honestly, it’ll probably work, <strong>but don’t do it!!!</strong></p>
+<p>Yes, you own your computer, but no, it doesn’t really trust you. Since it doesn’t trust you, there are actually several levels of “please don’t touch this” files located on your machine.</p>
+<p>One of the highest levels of protection files that <em>don’t belong to you</em>. Instead of belonging to you – aka your username when you log in – they belong to the computer itself, a very powerful fancy user named <code>root</code>.</p>
+<p>When you run <code>sudo</code>, you’re saying “oh hell I don’t care about any of that, JUST LET ME BE IN CONTROL” and the computer says fine fine fine, do whatever you want. And then probably in like two weeks it turns out what you were trying to do was actually a bad idea, and there was a better solution!</p>
+<h3 id="an-example-of-not-using-sudo">An example of not using <code>sudo</code></h3>
+<p>In our case: when you tried to use homebrew to do something, it started yelling at you:</p>
+<pre><code>Error: /usr/local must be writable!</code></pre>
+<p>So bad! So scary!! If you <a href="https://apple.stackexchange.com/questions/381970/error-usr-local-must-be-writable-update-homebrew">search for an answer</a> you find the perfectly predictable “just run <code>sudo</code>” answer. And yes, it works, and yes, it’s near the top, but no! Don’t do it!</p>
+<p>The right answer is lower down: <strong>reinstall homebrew and try again</strong>.</p>
+<p>Apparently between certain versions of homebrew (and maybe OS X) it stopped installing in <code>/usr/local</code> – which belongs to <code>root</code> – and started installing in <code>/opt/homebrew</code>, which apparently does <em>not</em> belong to root.</p>
+<p>How would you know that? You personally wouldn’t, honestly, except that this random person on the internet told you how it fix it.</p>
+<p>But just know: <strong>if the best solution suggests using <code>sudo</code>, find a second-best answer</strong>. The computer is trying to keep those files safe for a reason! (…well, usually)</p>
+        </div>
+      </div>
+    </section>
+    
+  </body>
+</html>

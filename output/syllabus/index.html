@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  lang=""
+  xml:lang=""
+  >
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+           <title>Foundations of Computation, Fall 2021</title>
+    <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+      div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+      ul.task-list{list-style: none;}
+      .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    </style>
+        <link rel="stylesheet" href="../style/bulma.css" />
+        <link rel="stylesheet" href="../style/custom.css" />
+     
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+    
+  </head>
+  <body>
+         <!-- <header id="title-block-header">
+      <h1 class="title">Foundations of Computation, Fall 2021</h1>
+            </header> -->
+    <section class="section">
+      <div class="container">
+        <div class="content">
+                      <p style="text-align: center"><a href="../syllabus/">← go to syllabus</a></p>
+          
+                    <figure>
+            <img src="../images/logo.jpg" alt="Foundations of Computation, Fall 2021"><figcaption aria-hidden="true">Foundations of Computation, Fall 2021</figcaption>
+          </figure>
+                      <h1>Foundations of Computation, Fall 2021</h1>
+                         <nav id="TOC" role="doc-toc">
+                            <!-- <p class="toc-title">Jump to section</p> -->
+               <ul>
+<li><a href="#the-basics">The basics</a>
+<ul>
+<li><a href="#whowhatwhereetc">Who/what/where/etc</a></li>
+<li><a href="#grading">Grading</a></li>
+<li><a href="#homework-1">Homework</a></li>
+</ul></li>
+<li><a href="#weekly-breakdown">Weekly Breakdown</a>
+<ul>
+<li><a href="#class-01-command-line-basic-python">Class 01: Command line, basic Python</a></li>
+<li><a href="#class-02-lists-dicts">Class 02: Lists + dicts</a></li>
+<li><a href="#class-03-apis">Class 03: APIs</a></li>
+<li><a href="#class-04-git-jupyter">Class 04: git + Jupyter</a></li>
+<li><a href="#class-05-pandas">Class 05: pandas</a></li>
+<li><a href="#class-06-cleaning-data">Class 06: Cleaning data</a></li>
+<li><a href="#class-07-14-descending-into-chaos-no-order-promised">Class 07-14: Descending into chaos, no order promised</a></li>
+</ul></li>
+</ul>
+            </nav>
+            
+<h1 id="the-basics">The basics</h1>
+<h2 id="whowhatwhereetc">Who/what/where/etc</h2>
+<p>Jonathan Soma</p>
+<p>Fall 2021, Columbia Graduate School of Journalism</p>
+<p>Mondays/Wednesdays, 10am-1pm. Mondays in 607B, Wednesdays in Brown.</p>
+<p>Slower responses at <a href="mailto:js4571@columbia.edu">js4571@columbia.edu</a>, faster responses on <a href="https://ledeprogram.slack.com/">Slack</a></p>
+<p>Zoom office hours available via <a href="https://calendly.com/jsoma/30min">calendly</a></p>
+<h3 id="teaching-assistants">Teaching assistants</h3>
+<ul>
+<li>Duy Nguyen, <a href="mailto:dn2530@columbia.edu">dn2530@columbia.edu</a></li>
+<li>Jasen Lo, <a href="mailto:jl6156@columbia">jl6156@columbia.edu</a></li>
+<li>Elisabeth Gawthrop, <a href="mailto:esg2145@columbia.edu">esg2145@columbia.edu</a></li>
+<li>Joy Harjanto, <a href="jh4514@columbia.edu">jh4514@columbia.edu</a></li>
+</ul>
+<h3 id="office-hours">Office hours</h3>
+<p>Office hours will happen all of the time, you’ll want to check <a href="https://calendar.google.com/calendar/u/0/embed?src=rklvp28tf3h2miabam4kjle048@group.calendar.google.com&amp;ctz=America/New_York">the office hours calendar here</a>.</p>
+<p>Most office hours will be hosted virtually on Gather, a spatial chat platform. It’s way more fun than asking questions on Slack! You can find our Gather link on <a href="https://courseworks2.columbia.edu/courses/140891">our CourseWorks page</a>.</p>
+<p>In-person office hours will be specifically noted as happening IRL.</p>
+<h2 id="grading">Grading</h2>
+<p>I don’t do quizzes or tests, so the breakdown looks like this:</p>
+<ul>
+<li><strong>Class participation:</strong> 30%</li>
+<li><strong>GitHub presentation:</strong> 20%</li>
+<li><strong>Homework:</strong> 50%</li>
+</ul>
+<h3 id="participation">Participation</h3>
+<p>Participating in class involves only slightly more than sitting behind a screen eating crumbs off of your keyboard. It can include:</p>
+<ul>
+<li>Asking questions in <strong>#foundations</strong> on Slack</li>
+<li>Going to office hours with instructors and TAs</li>
+<li>Attending homework review sessions</li>
+</ul>
+<p>You will need at least <strong>two participation marks</strong> each week.</p>
+<h3 id="github-repos">GitHub repos</h3>
+<p>GitHub is, more or less, the way you store all of your stuff on the internet. We’ll learn about it at the beginning of Week 3.</p>
+<p>Along with (eventually) posting your homework there, you’ll also be doing <em>something else</em>. That something else can take a few formats, as long as it improves your online presence. Examples might be:</p>
+<ul>
+<li>Posting your project from Reporting II</li>
+<li>Cheat sheets</li>
+<li>Walkthroughs or tutorials for people learning anything you learned in (or outside of) class</li>
+<li>Keeping track of project ideas, data sources, etc.</li>
+</ul>
+<p>Don’t worry about this requirement for now, <strong>we’ll talk about it when we start using GitHub.</strong></p>
+<h3 id="homework">Homework</h3>
+<p>You’ll have an infinite amount of homework. <strong>You don’t need to finish it all.</strong> If you finish 30% of it, you’re perfectly adequate.</p>
+<p>See below.</p>
+<h2 id="homework-1">Homework</h2>
+<p>You’ll have homework due before every class. There’s a lot of it, and generally speaking it can be difficult.</p>
+<p>As I said above, <strong>you don’t need to finish it all.</strong> If you finish 30% of it you’ll be solid on the basics. You might have a difficult time adjusting to this approach mentally, but I have faith in you.</p>
+<p>If you feel like you’re drowning in the first couple weeks, don’t worry. On Week 3 there’s a big reset (conceptually speaking, from a programming standpoint) and it’s <em>kind of</em> a fresh chance to start over.</p>
+<h3 id="homework-grading">Homework grading</h3>
+<p>Homework is graded on a 5-point scale. 3 points are for successfully completing the content, with 2 points additional points for style. Style includes things like naming variable names appropriately and putting parens in the right places.</p>
+<p>Homework should be graded within a week of you turning it in. The feedback generally isn’t too specific because there will be a review session for each homework assignment.</p>
+<h3 id="review-sessions">Review sessions</h3>
+<p>Within a week of each homework assignment being turned in, a TA will host a review session where they go over the content. They’ll generally be recorded and posted to Panopto on CourseWorks.</p>
+<p>After a review session, I recommend going back and doing the homework again. Even though you’ve alreay done it, you’ll get a lot out of it: I promise this is a nearly perfect way to learn.</p>
+<h3 id="working-in-groups-and-also-cheating">Working in groups and also <em>CHEATING</em></h3>
+<p><strong>First:</strong> 150% you should work in groups. It’s how you survive. Hang out in rooms together, try hard to not catch COVID, scream about Python syntax errors, but please please please work together. Alternatively you can sit at home, hang out on Gather, easily avoid catching COVID, scream about Python syntax errors, etc.</p>
+<p>Second: don’t cut and paste code from someone else and turn it in as your own, it’s a waste of everyone’s time. Why in the world are you going to make me read that? Why should we waste our time grading something you didn’t write and don’t understand? We want to grade <em>your</em> work.</p>
+<p>So: <strong>if you don’t understand something, either ask a TA or just skip it.</strong> You’ll always be able to hang out at the homework review session and learn it for <em>real</em> instead of trying to fake your way through it. Remember how I said I don’t care if you do all of your homework? I mean it!</p>
+<p>But, important note!!! You’ll <strong>definitely</strong> end up stealing code from the internet that you don’t understand. That’s perfectly fine, because trying to make it work is an awful experience that teaches you almost as much as doing it yourself.</p>
+<h1 id="weekly-breakdown">Weekly Breakdown</h1>
+<h2 id="class-01-command-line-basic-python">Class 01: Command line, basic Python</h2>
+<p>Learning what to do after you turn on your computer.</p>
+<h3 id="class-links">Class links</h3>
+<ul>
+<li><a href="http://littlecolumns.com/tools/python-wrangler/">Python Wrangler</a> will attempt to help us install Python in an incredibly specific way</li>
+<li><a href="https://code.visualstudio.com/">Visual Studio Code</a> will be our text editor</li>
+<li><a href="http://jonathansoma.com/lede/foundations-2019/terminal/setting-up-cmdr-as-windows-shell/">Cmder</a> will be what Windows users will use for the command line. Mac users won’t need this!</li>
+</ul>
+<h3 id="notes">Notes</h3>
+<ul>
+<li><a href="../class-01/">Class 1 notes</a></li>
+</ul>
+<h3 id="other-links">Other Links</h3>
+<ul>
+<li><a href="http://littlecolumns.com/learn/python">Python’s Not (Just) For Unicorns</a>, I hate all Python tutorials so I made this one <em>part of your pre-work</em></li>
+<li><a href="https://web.mit.edu/mprat/Public/web/Terminus/Web/main.html">Terminus</a>, to pretend the command line is fun <em>part of your pre-work</em></li>
+<li><a href="https://www.theverge.com/22684730/students-file-folder-directory-structure-education-gen-z">FILE NOT FOUND: A generation that grew up with Google is forcing professors to rethink their lesson plans</a>, wherein people eager to capitalize on the popularity of “oh hey look at Gen Z!” pretend something incredibly common and practically universal is a generational thing</li>
+</ul>
+<h2 id="class-02-lists-dicts">Class 02: Lists + dicts</h2>
+<p>Computer programs are great ways to make many mistakes, again and again, faster than you ever thought possible.</p>
+<h2 id="class-03-apis">Class 03: APIs</h2>
+<p>Telling your computer to talk to other computers.</p>
+<h2 id="class-04-git-jupyter">Class 04: git + Jupyter</h2>
+<p>Showing off to the public, becoming friends and enemies with members of the internet, making all of our awful code look much fancier.</p>
+<h2 id="class-05-pandas">Class 05: pandas</h2>
+<p>Visiting the Chengdu of Python, wrangling data, loving it, hating it.</p>
+<h2 id="class-06-cleaning-data">Class 06: Cleaning data</h2>
+<p>It’s all we do to the point that <a href="https://www.nytimes.com/2014/08/18/technology/for-big-data-scientists-hurdle-to-insights-is-janitor-work.html">it was even in the NYT like sixty years ago</a></p>
+<h2 id="class-07-14-descending-into-chaos-no-order-promised">Class 07-14: Descending into chaos, no order promised</h2>
+<ul>
+<li>Mapping with QGIS</li>
+<li>“Fancy” scraping with <code>requests</code> and <code>BeautifulSoup</code></li>
+<li>Automation with GitHub Actions</li>
+<li>Advanced/interactive scraping with Selenium</li>
+<li>Convering PDFs into a reasonable format</li>
+</ul>
+        </div>
+      </div>
+    </section>
+    
+  </body>
+</html>

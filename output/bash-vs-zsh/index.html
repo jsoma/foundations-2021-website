@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  lang=""
+  xml:lang=""
+  >
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+           <title>Picking shells in OS X: bash vs zsh</title>
+    <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+      div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+      ul.task-list{list-style: none;}
+      .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    </style>
+        <link rel="stylesheet" href="../style/bulma.css" />
+        <link rel="stylesheet" href="../style/custom.css" />
+     
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+    
+  </head>
+  <body>
+         <!-- <header id="title-block-header">
+      <h1 class="title">Picking shells in OS X: bash vs zsh</h1>
+            </header> -->
+    <section class="section">
+      <div class="container">
+        <div class="content">
+                      <p style="text-align: center"><a href="../class-01/">← back to class-01</a></p>
+          
+                      <h1>Picking shells in OS X: bash vs zsh</h1>
+                         <nav id="TOC" role="doc-toc">
+                            <!-- <p class="toc-title">Jump to section</p> -->
+               <ul>
+<li><a href="#startup-files">Startup files</a></li>
+<li><a href="#figuring-things-out">Figuring things out</a></li>
+</ul>
+            </nav>
+            
+<p>The command line looks boring enough that you’d think it was the same everywhere, but it isn’t true! There are actually a handful of different varieties of the command line – technically speaking, they’re called <strong>shells</strong>.</p>
+<p>Back in the day, the default shell in OS X was something called <strong>bash</strong>.</p>
+<p>Then, during some OS X update, the default shell suddenly became <strong>zsh</strong> (or <strong>zshell</strong>)!</p>
+<p>Does this matter? Do you care? No, not really! Bash and zsh operate exactly the same as far as you’re concerned, but there’s one gotcha: <em>it can really screw things up when you try to install things on your computer.</em> This mostly has to do with startup files, and making sure things go in the right place.</p>
+<h2 id="startup-files">Startup files</h2>
+<p>When you start up Terminal, it runs a couple files to set things up. It’ll adjust your <code>PATH</code> to let your computer know where to look for things, it’ll set up <code>pyenv</code> to figure out what version of Python it should be using, it’ll do blah blah whatever else you tell it to do.</p>
+<p>The way it knows what to set up is <strong>startup files</strong> or <strong>initialization files</strong>. I don’t have an internet connection right now so let’s be honest: I made both of those terms up.</p>
+<p>Based on what shell you’re using, different startup files get run!</p>
+<ul>
+<li>If you’re using <strong>bash</strong>, it runs <code>.bash_profile</code> and <code>.bashrc</code></li>
+<li>If you’re using <strong>zshell</strong>, it runs <code>.zprofile</code> and <code>.zshrc</code></li>
+</ul>
+<p>The best is when your computer suggests you switch from bash to zshell, and as a result you lose all of your settings. It’s cute!</p>
+<h2 id="figuring-things-out">Figuring things out</h2>
+<p>I have a YouTube video about this! It’s oddly popular because this issue causes problems for every human on the planet. <a href="youtube.com/watch?v=OfCbtMN9-Jo">How to fix bash_profile/PATH not working in OS X Catalina Terminal by using zshrc instead</a></p>
+        </div>
+      </div>
+    </section>
+    
+  </body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  lang=""
+  xml:lang=""
+  >
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+           <title>Package managers on OS X, Windows and Linux</title>
+    <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+      div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+      ul.task-list{list-style: none;}
+      .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    </style>
+        <link rel="stylesheet" href="../style/bulma.css" />
+        <link rel="stylesheet" href="../style/custom.css" />
+     
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+    
+  </head>
+  <body>
+         <!-- <header id="title-block-header">
+      <h1 class="title">Package managers on OS X, Windows and Linux</h1>
+            </header> -->
+    <section class="section">
+      <div class="container">
+        <div class="content">
+                      <p style="text-align: center"><a href="../class-01/">← back to class-01</a></p>
+          
+                      <h1>Package managers on OS X, Windows and Linux</h1>
+                         <nav id="TOC" role="doc-toc">
+                            <!-- <p class="toc-title">Jump to section</p> -->
+               <ul>
+<li><a href="#what-is-a-package-manager">What is a package manager?</a></li>
+<li><a href="#an-example">An example</a></li>
+<li><a href="#install-ffmepg-on-linux-or-google-colab">Install ffmepg on Linux (or Google Colab)</a></li>
+<li><a href="#in-summary">In summary</a></li>
+</ul>
+            </nav>
+            
+<h2 id="what-is-a-package-manager">What is a package manager?</h2>
+<p>Installing software is awful. You have to do what, like ten thousand steps?</p>
+<ol type="1">
+<li>Painstakingly search for something on the internet</li>
+<li>Move your mouse around, click links</li>
+<li>Figure out <a href="../downloading-software/">which version of the software</a> you want</li>
+<li>Somehow convince it to run on your computer</li>
+</ol>
+<p>And probably like ten or twenty other steps. It’s terrible!</p>
+<p><strong>Package managers solve that.</strong> You just type things on the command line like a hacker, and all of your problems are solved. It’s great!</p>
+<h3 id="os-x">OS X</h3>
+<p>There’s really only one package manager on OS X, it’s called <a href="https://brew.sh/">Homebrew</a>. You’ll install a lot of things with it, by running <code>brew install blah blah blah</code>.</p>
+<p>Over time OS X has changed a lot, and Homebrew has to do little dances to make sure it works successfully in each version of OS X. As you upgrade, you might need to reinstall homebrew or run commands like <code>brew doctor</code> in order to repair issues as a result of upgrades.</p>
+<p>So don’t stress if you run into issues: it’s totally normal!</p>
+<h3 id="windows">Windows</h3>
+<p>Windows has two, one called <a href="https://chocolatey.org">Chocolatey</a> and one called <a href="https://scoop.sh">Scoop</a>. For some reason package managers on Windows aren’t terribly popular, and I don’t use Windows, so unfortunately I’m not that familiar with them.</p>
+<p><strong>If you’re curious, though, you should totally give one of them a shot!</strong></p>
+<h3 id="linux">Linux</h3>
+<p>Linux is actually a <em>ton</em> of different related operating systems, and since they’re all somewhat different they have a handful of package managers. <code>apt</code> is a big one, as is <code>deb</code>. They all work similarly to the other ones on Windows and OS X!</p>
+<p>If you end up trying to run fancy software on <a href="https://digitalocean.com/">servers</a> or <a href="https://colab.research.google.com/">Google Colab</a>, you’ll probably use <code>apt</code> to install software that doesn’t already come pre-installed.</p>
+<h2 id="an-example">An example</h2>
+<p>For example, maybe you want to install <a href="https://www.ffmpeg.org">ffmpeg</a> to edit videos from the command line. Instead of screwing around on their site to figure out how to install it, you can just use your package manager!</p>
+<h3 id="install-ffmpeg-on-windows">Install ffmpeg on Windows</h3>
+<pre><code>choco install ffmpeg</code></pre>
+<h3 id="install-ffmpeg-on-os-x">Install ffmpeg on OS X</h3>
+<pre><code>brew install ffmpeg</code></pre>
+<h2 id="install-ffmepg-on-linux-or-google-colab">Install ffmepg on Linux (or Google Colab)</h2>
+<pre><code>apt install ffmpeg</code></pre>
+<h2 id="in-summary">In summary</h2>
+<p>They’re a delight!</p>
+        </div>
+      </div>
+    </section>
+    
+  </body>
+</html>
