@@ -14,6 +14,8 @@ For the command line, Windows people used [Cmder](https://cmder.net/) while OS X
 
 Running commands can [end up causing trouble sometimes](../running-cli-commands/), but that's just the tip of the iceberg. Based on what we're doing (Python? command line? SQL?) we might end up with [**different prompts** that can run completely different commands](../different-prompts/)! We didn't talk about it during class, but I promise it's going to be a common problem we run into when working with SQL.
 
+Another thing we didn't get to was [how to run Python scripts from the command line](../how-to-run-python-files). In your pre-work all you did was type in little boxes! Don't worry, though, [I made a quick video for you](https://www.youtube.com/watch?v=uUIlwDPmztg).
+
 ## Homework
 
 For your homework, you're going to be working on the skills you learned from the [Python tutorial](http://littlecolumns.com/learn/python), and turning your [Terminus](https://web.mit.edu/mprat/Public/web/Terminus/Web/main.html) abilities into real-life command line powers.
