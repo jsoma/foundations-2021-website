@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  lang=""
+  xml:lang=""
+  >
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5541738-17"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-5541738-17');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+           <title>What are hidden files like .bash_profile and .gitignore?</title>
+    <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+      div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+      ul.task-list{list-style: none;}
+      .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    </style>
+        <link rel="stylesheet" href="../style/bulma.css" />
+        <link rel="stylesheet" href="../style/custom.css" />
+     
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+    
+  </head>
+  <body>
+         <!-- <header id="title-block-header">
+      <h1 class="title">What are hidden files like .bash_profile and .gitignore?</h1>
+            </header> -->
+    <section class="section">
+      <div class="container">
+        <div class="content">
+                      <p style="text-align: center"><a href="../class-02/">← back to class-02</a></p>
+          
+                      <h1>What are hidden files like .bash_profile and .gitignore?</h1>
+                         <nav id="TOC" role="doc-toc">
+                            <!-- <p class="toc-title">Jump to section</p> -->
+               <ul>
+<li><a href="#how-hidden-files-hide-from-you">How hidden files hide from you</a></li>
+<li><a href="#examples-of-hidden-files">Examples of hidden files</a></li>
+</ul>
+            </nav>
+            
+<p>Congratulations, you own a computer! But even though you shelled out your hard-earned cash, <strong>it doesn’t quite trust you.</strong></p>
+<p>There are a few different ways that the computer protects itself from you accidentally screwing it up. One of the less serious ways is creating <strong>hidden files.</strong></p>
+<h2 id="how-hidden-files-hide-from-you">How hidden files hide from you</h2>
+<p>Hidden files are files that you’re free to browse, open, and edit, <strong>but only if you are able to find them!</strong> On OS X, hidden files are marked as “hidden” by having their filename start with a period.</p>
+<table>
+<thead>
+<tr class="header">
+<th>filename</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>filename.txt</code></td>
+<td>not a hidden file</td>
+</tr>
+<tr class="even">
+<td><code>.filename.txt</code></td>
+<td>a hidden file!!</td>
+</tr>
+</tbody>
+</table>
+<p>By default, both Finder and the command line both hide these files from you. While <a href="../listing-hidden-files">finding hidden files</a> or <a href="../editing-hidden-files">editing them</a> isn’t too difficult, their slightly secret nature keeps them juuuuust hidden enough that most computer users won’t be able to accidentally screw up their computer by editing them. <a href="https://en.wikipedia.org/wiki/Security_through_obscurity">Security through obscurity</a> at its finest!</p>
+<h2 id="examples-of-hidden-files">Examples of hidden files</h2>
+<h3 id="shell-startup-files">Shell startup files</h3>
+<p><a href="https://jonathansoma.com/course/foundations-2021/startup-files-for-shells/">Shell startup files</a> are the most common hidden files.</p>
+<ul>
+<li><code>~/.bash_profile</code> and <code>~/.bashrc</code> are startup files for the bash shell, while</li>
+<li><code>~/.zprofile</code> and <code>~/.zshrc</code> are startup files for the zsh shell.</li>
+</ul>
+<p>Their filenames are technically just <code>.bash_profile</code> (etc), but you’ll usually see them listed as <code>~/.bash_profile</code> as a marker that they’re in your home directory.</p>
+<h3 id="gitignore"><code>.gitignore</code></h3>
+<p>When you’re saving your files into a git repository, the <code>.gitignore</code> file tells git about files it should ignore. For example, temporary files and Visual Studio Code setting files.</p>
+<h3 id="the-.git-folder">The <code>.git</code> folder</h3>
+<p>While most hidden files are just that – files – sometimes you’ll come across entire directories! When you set up a folder as a git repository, it secretly creates a <code>.git</code> folder: all of the data for the repo is tracked inside of this folder!</p>
+<p>If you delete the <code>.git</code> folder, all of the local information about the repository will be lost.</p>
+<h3 id="ds_store"><code>.DS_Store</code></h3>
+<p>Oh boy, don’t get me started on <code>.DS_Store</code>! It’s a <a href="https://en.wikipedia.org/wiki/.DS_Store">weird little file that shows up in OS X folders</a> that will be the first thing you add to your <code>.gitignore</code> file.</p>
+<p>Most OS X users won’t know <code>.DS_Store</code>files exist since they’re hidden (unless they turn on <a href="../listing-hidden-files">seeing hidden files</a>), but Windows users might! If a Windows person opens up a zip file made on OS X, oftentimes a <code>.DS_Store</code> will show up after accidentally being included by the mac user.</p>
+        </div>
+      </div>
+    </section>
+    
+  </body>
+</html>

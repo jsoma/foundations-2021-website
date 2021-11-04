@@ -59,7 +59,7 @@ body .content h2::after {
 body .content,
 body .content p {
     color: #f7eee5;
-    text-shadow: 0 0 5px;
+    text-shadow: 0 0 0px;
 }
 
 body .content a {
@@ -78,8 +78,8 @@ body .content strong {
 
 code {
     background-color: inherit;
-    font-size: 1em;
-    color: #91ef5d;
+    font-size: 0.9;
+    color: #5dabef;
     padding: 0.1em 0.25em 0.1em
 }
 
@@ -119,7 +119,8 @@ ul li {
 
 .content blockquote {
     background-color: black;
-    border-left-color: #666666;
+    border-left-color: #303030;
+    border-left-width: 20px;
 }
 
 .content pre {
@@ -134,4 +135,14 @@ ul li {
 
 .video-container {
     margin-bottom: 1.5em;
+}
+
+.content table thead th {
+    color: white;
+}
+
+.content table {
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
 }

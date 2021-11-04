@@ -125,6 +125,10 @@ Learning what to do after you turn on your computer.
 
 Computer programs are great ways to make many mistakes, again and again, faster than you ever thought possible.
 
+### Notes
+
+* [Class 2 notes](../class-02/)
+
 ## Class 03: APIs
 
 Telling your computer to talk to other computers.
@@ -132,6 +136,9 @@ Telling your computer to talk to other computers.
 ## Class 04: git + Jupyter
 
 Showing off to the public, becoming friends and enemies with members of the internet, making all of our awful code look much fancier.
+
+* [Class 4 notes](../class-04/)
+
 
 ## Class 05: pandas
 

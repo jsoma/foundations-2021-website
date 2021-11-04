@@ -5,6 +5,16 @@
   xml:lang=""
   >
   <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5541738-17"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-5541738-17');
+    </script>
+
     <meta charset="utf-8" />
     <meta name="generator" content="pandoc" />
     <meta
@@ -44,6 +54,7 @@
                <ul>
 <li><a href="#setting-your-path-in-os-x">Setting your PATH in OS X</a></li>
 <li><a href="#settings-your-path-in-windows">Settings your PATH in Windows</a></li>
+<li><a href="#conflicting-paths">Conflicting paths</a></li>
 </ul>
             </nav>
             
@@ -57,6 +68,26 @@
 <p>which adds the <code>/usr/local/bathroom_sink</code> directory to your PATH.</p>
 <h2 id="settings-your-path-in-windows">Settings your PATH in Windows</h2>
 <p>This is not as fun! In Windows you get to click around and manage <strong>environment variables</strong>.</p>
+<h2 id="conflicting-paths">Conflicting paths</h2>
+<p>Let’s say you typed <code>hairbrush</code> but you had <strong>two hairbrushes in your apartment</strong>:</p>
+<ul>
+<li>One in <code>/usr/local/bathroom_sink</code>,</li>
+<li>and another in <code>/opt/homebrew/shopping_bag</code></li>
+</ul>
+<p>Just like a person, your computer stops searching once it’s found what it’s looking for. It goes down the list of places the hairbrush might be, finds it in the sink, and then never looks in the shopping bag!</p>
+<p>This can end up causing problems every once in a while:</p>
+<p>Let’s say you have a few Pythons installed on your computer, and you just installed a brand-new <code>3.9.7</code>.</p>
+<p>You run <code>python --version</code> and it says… <code>3.8.6</code>! What happened to the <code>3.9.7</code> you’re looking for? <strong>It might be a <code>PATH</code> issue!</strong></p>
+<p>If your computer’s <code>PATH</code> has the <code>3.8.6</code> one before the <code>3.9.7</code> one, it’ll never be able to find the new version! You have two options:</p>
+<ul>
+<li>Uninstall <code>3.8.6</code> (maybe overkill)</li>
+<li>Look at your <code>PATH</code> and see if you can change the order (maybe confusing)</li>
+</ul>
+<p>How does this work in real life? Well, for example, my <code>~/.zshrc</code> might look like this:</p>
+<pre><code>export PATH=&quot;/Library/Frameworks/Python.framework/Versions/3.8/bin:${PATH}&quot;
+export PATH=&quot;/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}&quot;</code></pre>
+<p>The first line adds Python 3.8 to my <code>PATH</code>, while the second adds Python 2.7. Are we getting an unexpected version of Python when we run the code? Maybe switch those two lines so it looks in the other location first!</p>
+<p>To learn more, you might want to read about <a href="../startup-files-for-shells/">startup files</a></p>
         </div>
       </div>
     </section>

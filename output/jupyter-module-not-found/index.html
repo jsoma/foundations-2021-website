@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  lang=""
+  xml:lang=""
+  >
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5541738-17"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-5541738-17');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+           <title>Fixing Module Not Found errors with Jupyter notebook</title>
+    <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+      div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+      ul.task-list{list-style: none;}
+      pre > code.sourceCode { white-space: pre; position: relative; }
+      pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+      pre > code.sourceCode > span:empty { height: 1.2em; }
+      .sourceCode { overflow: visible; }
+      code.sourceCode > span { color: inherit; text-decoration: inherit; }
+      div.sourceCode { margin: 1em 0; }
+      pre.sourceCode { margin: 0; }
+      @media screen {
+      div.sourceCode { overflow: auto; }
+      }
+      @media print {
+      pre > code.sourceCode { white-space: pre-wrap; }
+      pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+      }
+      pre.numberSource code
+        { counter-reset: source-line 0; }
+      pre.numberSource code > span
+        { position: relative; left: -4em; counter-increment: source-line; }
+      pre.numberSource code > span > a:first-child::before
+        { content: counter(source-line);
+          position: relative; left: -1em; text-align: right; vertical-align: baseline;
+          border: none; display: inline-block;
+          -webkit-touch-callout: none; -webkit-user-select: none;
+          -khtml-user-select: none; -moz-user-select: none;
+          -ms-user-select: none; user-select: none;
+          padding: 0 4px; width: 4em;
+          color: #aaaaaa;
+        }
+      pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+      div.sourceCode
+        {   }
+      @media screen {
+      pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+      }
+      code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+      code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+      code span.at { color: #7d9029; } /* Attribute */
+      code span.bn { color: #40a070; } /* BaseN */
+      code span.bu { } /* BuiltIn */
+      code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+      code span.ch { color: #4070a0; } /* Char */
+      code span.cn { color: #880000; } /* Constant */
+      code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+      code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+      code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+      code span.dt { color: #902000; } /* DataType */
+      code span.dv { color: #40a070; } /* DecVal */
+      code span.er { color: #ff0000; font-weight: bold; } /* Error */
+      code span.ex { } /* Extension */
+      code span.fl { color: #40a070; } /* Float */
+      code span.fu { color: #06287e; } /* Function */
+      code span.im { } /* Import */
+      code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+      code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+      code span.op { color: #666666; } /* Operator */
+      code span.ot { color: #007020; } /* Other */
+      code span.pp { color: #bc7a00; } /* Preprocessor */
+      code span.sc { color: #4070a0; } /* SpecialChar */
+      code span.ss { color: #bb6688; } /* SpecialString */
+      code span.st { color: #4070a0; } /* String */
+      code span.va { color: #19177c; } /* Variable */
+      code span.vs { color: #4070a0; } /* VerbatimString */
+      code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+      .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    </style>
+        <link rel="stylesheet" href="../style/bulma.css" />
+        <link rel="stylesheet" href="../style/custom.css" />
+     
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+    
+  </head>
+  <body>
+         <!-- <header id="title-block-header">
+      <h1 class="title">Fixing Module Not Found errors with Jupyter notebook</h1>
+            </header> -->
+    <section class="section">
+      <div class="container">
+        <div class="content">
+                      <p style="text-align: center"><a href="../class-04/">← back to class-04</a></p>
+          
+                      <h1>Fixing Module Not Found errors with Jupyter notebook</h1>
+                         <nav id="TOC" role="doc-toc">
+                            <!-- <p class="toc-title">Jump to section</p> -->
+               <ul>
+<li><a href="#the-quick-answer">The quick answer</a></li>
+<li><a href="#the-modulenotfounderror-problem-in-jupyter-notebook">The ModuleNotFoundError problem in Jupyter notebook</a></li>
+<li><a href="#why-it-happens-multiple-python-versions">Why it happens: multiple Python versions</a></li>
+<li><a href="#how-to-tell-which-version-of-python-pip-is-using">How to tell which version of Python <code>pip</code> is using</a></li>
+<li><a href="#how-to-tell-which-version-of-python-jupyter-is-using">How to tell which version of Python Jupyter is using</a></li>
+<li><a href="#how-to-change-the-python-3-that-jupyter-notebook-uses">How to change the “Python 3” that Jupyter notebook uses</a></li>
+</ul>
+            </nav>
+            
+<h2 id="the-quick-answer">The quick answer</h2>
+<p>If you hate reading, <a href="../quick-fix-jupyter-module-not-found">you can find a quick fix for missing modules here</a>.</p>
+<h2 id="the-modulenotfounderror-problem-in-jupyter-notebook">The ModuleNotFoundError problem in Jupyter notebook</h2>
+<p>When you’re using Python, you end up using a lot of libraries. Maybe <code>requests</code> for grabbing things from the internet, for example!</p>
+<p>A very, very common problem works like this:</p>
+<ol type="1">
+<li>You used <code>pip install</code> to install a library (example: <code>pip install requests</code>)</li>
+<li>You try to import the library in Jupyter notebook, and it tells you it can’t find it! For example, <code>ModuleNotFoundError: No module named 'requests'</code></li>
+</ol>
+<p>To make things even more confusing: maybe you try to run a script from the command line with <code>import requests</code> and it works perfectly fine! Let’s talk about what is going on.</p>
+<h3 id="but-first-double-check">But first: double check</h3>
+<p>If you’re getting <code>ModuleNotFoundError</code> in Jupyter, first double-check that you installed the package with <code>pip install</code>. <strong>Triple-check you didn’t misspell the package name in your import,</strong> otherwise you’ll waste a lot of time reading this page.</p>
+<h2 id="why-it-happens-multiple-python-versions">Why it happens: multiple Python versions</h2>
+<p>You probably have multiple versions of Python on your computer. This isn’t weird or bad, it’s super normal! Maybe your version of OS X came with 2.7 preinstalled, or you installed Anaconda at some point, or you used <code>brew install</code> and some other software hid a very specific version on your computer.</p>
+<p>You usually only notice this when you upgrade Python versions: when you try to run scripts that used to work, suddenly you get <code>ModuleNotFoundError</code> and need to install things all over again!</p>
+<p>The first thing to check on is whether <code>pip</code> is using the same Python as Jupyter.</p>
+<h2 id="how-to-tell-which-version-of-python-pip-is-using">How to tell which version of Python <code>pip</code> is using</h2>
+<p>When you use <code>pip install requests</code>, though, it installs the requests library <strong>for only one version of Python</strong>. You can usually tell which version by running <code>pip --version</code></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> pip <span class="at">--version</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> 21.2.3 from /Users/soma/.pyenv/versions/3.10.0/lib/python3.10/site-packages/pip <span class="er">(</span><span class="ex">python</span> 3.10<span class="kw">)</span></span></code></pre></div>
+<p>If I pay close attention to the output, you can see that <strong>my default pip version is associated with Python 3.10.0 that I installed from with pyenv</strong>.</p>
+<p>If it isn’t very clear, you can also try <code>pip list -v</code> to see exactly where things were installed.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">soma@MacBook-Pro</span> site % pip list <span class="at">-v</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Package</span>            Version   Location                                                        Installer</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">------------------</span> <span class="at">---------</span> <span class="at">---------------------------------------------------------------</span> <span class="at">---------</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">certifi</span>            2021.10.8 /Users/soma/.pyenv/versions/3.10.0/lib/python3.10/site-packages pip</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">charset-normalizer</span> 2.0.7     /Users/soma/.pyenv/versions/3.10.0/lib/python3.10/site-packages pip</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ex">idna</span>               3.3       /Users/soma/.pyenv/versions/3.10.0/lib/python3.10/site-packages pip</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span>                21.2.3    /Users/soma/.pyenv/versions/3.10.0/lib/python3.10/site-packages pip</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="ex">requests</span>           2.26.0    /Users/soma/.pyenv/versions/3.10.0/lib/python3.10/site-packages pip</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="ex">setuptools</span>         57.4.0    /Users/soma/.pyenv/versions/3.10.0/lib/python3.10/site-packages pip</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="ex">six</span>                1.16.0    /Users/soma/.pyenv/versions/3.10.0/lib/python3.10/site-packages pip</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="ex">urllib3</span>            1.26.7    /Users/soma/.pyenv/versions/3.10.0/lib/python3.10/site-packages pip</span></code></pre></div>
+<p>Again it’s pretty clear it’s <strong>Python 3.10.0 from pyenv</strong>.</p>
+<h2 id="how-to-tell-which-version-of-python-jupyter-is-using">How to tell which version of Python Jupyter is using</h2>
+<p>When you’re in Jupyer and run a notebook, the notebook is <strong>running a specific Python on your computer</strong>. Oftentimes, it isn’t even the same version as which you run <code>python</code> from the command line!</p>
+<p>Technically, Jupyter uses something called a <strong>kernel</strong> or <strong>kernelspec</strong> to explain which Python it should be talking to. You can get a list of kernels by running <code>jupyter kernelspec list</code> (although it isn’t very helpful).</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> jupyter kernelspec list       </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Available</span> kernels:</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="ex">anaconda-base</span>    /Users/soma/Library/Jupyter/kernels/anaconda-base</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="ex">huggingface</span>      /Users/soma/Library/Jupyter/kernels/huggingface</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="ex">python3</span>          /Users/soma/Library/Jupyter/kernels/python3</span></code></pre></div>
+<p>From this example, we see I actually have three kernels! I have a few different Pythons I like to use with Jupyter, so they each have their own kernel. <strong>But how do I know which Python my Python 3 kernel is pointing to?</strong></p>
+<blockquote>
+<p><strong>Cheating hack:</strong> If you like to look at JSON, you can combine this step and the next step with <code>jupyter kernelspec list --json</code>.</p>
+</blockquote>
+<h3 id="one-kernel-at-a-time">One kernel at a time</h3>
+<p>The output of <code>jupyter kernelspec list</code> only tells me the <em>folders</em> that each kernel lives in. To actually get the <em>details</em> of the kernel, I need to look at a specific file in that folder.</p>
+<ul>
+<li>We know the kernel is in <code>/Users/soma/Library/Jupyter/kernels/python3</code></li>
+<li>So we need to look at <code>/Users/soma/Library/Jupyter/kernels/python3/kernel.json</code></li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cat /Users/soma/Library/Jupyter/kernels/python3/kernel.json</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">{</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a> <span class="st">&quot;argv&quot;</span><span class="ex">:</span> [</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;/Users/soma/.pyenv/versions/3.8.2/bin/python&quot;</span><span class="ex">,</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;-m&quot;</span><span class="ex">,</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;ipykernel_launcher&quot;</span><span class="ex">,</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;-f&quot;</span><span class="ex">,</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;{connection_file}&quot;</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a> <span class="ex">],</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a> <span class="st">&quot;display_name&quot;</span><span class="ex">:</span> <span class="st">&quot;Python 3&quot;</span>,</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a> <span class="st">&quot;language&quot;</span><span class="ex">:</span> <span class="st">&quot;python&quot;</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="kw">}</span></span></code></pre></div>
+<p>The kernel is called “Python 3” in Jupyter, but looking at the kernel files shows it’s specifically attached to Python 3.8.2 (probably because that’s how we installed Jupyter).</p>
+<p>If <code>pip</code> works for <strong>3.10.0</strong>, but Jupyter uses <strong>3.8.2</strong>, installed packages will nevers how up in Jupyter!</p>
+<h2 id="how-to-change-the-python-3-that-jupyter-notebook-uses">How to change the “Python 3” that Jupyter notebook uses</h2>
+<p>Maybe we enjoyed Python 3.8.2 in Jupyter before, but now we want it to use Python 3.10.0.</p>
+<blockquote>
+<p><strong>Warning-ish:</strong> if you installed packages for your old Python you’ll need to reinstall them to have them work in the upgraded Jupyter.</p>
+</blockquote>
+<p>To change the default Python 3 for Jupyter, you need to use the <code>ipykernel</code> package. We’ll use go through three steps:</p>
+<ol type="1">
+<li>Confirm that <code>python</code> is the version we think it is</li>
+<li>Use <code>pip</code> to install the <code>ipykernel</code> package</li>
+<li>Have Python update the kernel with <code>python -m ipykernel install --user</code></li>
+</ol>
+<p>It looks like this:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> python <span class="at">--version</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Python</span> 3.10.0</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> pip install ipykernel</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> python <span class="at">-m</span> ipykernel install <span class="at">--user</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="ex">Installed</span> kernelspec python3 in /Users/soma/Library/Jupyter/kernels/python3</span></code></pre></div>
+<p>We see it installed to <code>/Users/soma/Library/Jupyter/kernels/python3</code>, the same location as our previous kernelspec. We can now look at the revised <code>kernel.json</code> file to see if it’s pointing at the right Python version:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cat /Users/soma/Library/Jupyter/kernels/python3/kernel.json</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">{</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a> <span class="st">&quot;argv&quot;</span><span class="ex">:</span> [</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;/Users/soma/.pyenv/versions/3.10.0/bin/python&quot;</span><span class="ex">,</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;-m&quot;</span><span class="ex">,</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;ipykernel_launcher&quot;</span><span class="ex">,</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;-f&quot;</span><span class="ex">,</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;{connection_file}&quot;</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a> <span class="ex">],</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a> <span class="st">&quot;display_name&quot;</span><span class="ex">:</span> <span class="st">&quot;Python 3 (ipykernel)&quot;</span>,</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a> <span class="st">&quot;language&quot;</span><span class="ex">:</span> <span class="st">&quot;python&quot;</span>,</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a> <span class="st">&quot;metadata&quot;</span><span class="ex">:</span> {</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;debugger&quot;</span><span class="ex">:</span> true</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a> <span class="kw">}</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span></code></pre></div>
+<p>There we go!</p>
+<blockquote>
+<p><strong>Potential problem:</strong> If your <code>python</code> command does not use the same version of python as your <code>pip</code> command this command won’t work. But if your computer is set up right they definitely do!</p>
+</blockquote>
+        </div>
+      </div>
+    </section>
+    
+  </body>
+</html>

@@ -21,7 +21,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=yes"
     />
-           <title>How to run Python files on the command line</title>
+           <title>Why am I getting a &quot;connection failed&quot; error window in my Jupyter notebook?</title>
     <style>
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
@@ -41,21 +41,23 @@
   </head>
   <body>
          <!-- <header id="title-block-header">
-      <h1 class="title">How to run Python files on the command line</h1>
+      <h1 class="title">Why am I getting a "connection failed" error window in my Jupyter notebook?</h1>
             </header> -->
     <section class="section">
       <div class="container">
         <div class="content">
-                      <p style="text-align: center"><a href="../class-01/">← back to class-01</a></p>
+                      <p style="text-align: center"><a href="../class-04/">← back to class-04</a></p>
           
-                      <h1>How to run Python files on the command line</h1>
+                      <h1>Why am I getting a &quot;connection failed&quot; error window in my Jupyter notebook?</h1>
              
-<p>I made a video for you! It’s about how to use Visual Studio Code and the command line to run Python files.</p>
-<div class="video-container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/uUIlwDPmztg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-</iframe>
-</div>
-<p>Let’s be honest: there’s another sneaky way you can do it that’s a bit easier, but it’s better for your brain if you do it this way first.</p>
+<figure>
+<img src="../images/connection-failed.png" alt="Connection Failed error" /><figcaption aria-hidden="true">Connection Failed error</figcaption>
+</figure>
+<p>A common issue you’ll see with a Jupyter notebook is a real scary and confusing one!</p>
+<pre><code>Connection failed
+A connection to the notebook server could not be established. The notebook will continue trying to reconnect. Check your network connection or notebook server configuration.</code></pre>
+<p>This probably happened because you <strong>shut down the notebook server.</strong> This usually happens because you closed the Terminal/Command Prompt/Cmder/iTerm2 window where you were running the <code>jupyter notebook</code> command.</p>
+<p><strong>To fix:</strong> Run <code>jupyter notebook</code> again, and re-save the notebook once the server is started. You’ll need to re-run all of the cells, but it should work.</p>
         </div>
       </div>
     </section>

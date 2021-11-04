@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  lang=""
+  xml:lang=""
+  >
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5541738-17"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-5541738-17');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+           <title>How to edit hidden files</title>
+    <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+      div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+      ul.task-list{list-style: none;}
+      .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    </style>
+        <link rel="stylesheet" href="../style/bulma.css" />
+        <link rel="stylesheet" href="../style/custom.css" />
+     
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+    
+  </head>
+  <body>
+         <!-- <header id="title-block-header">
+      <h1 class="title">How to edit hidden files</h1>
+            </header> -->
+    <section class="section">
+      <div class="container">
+        <div class="content">
+                      <p style="text-align: center"><a href="../class-02/">← back to class-02</a></p>
+          
+                      <h1>How to edit hidden files</h1>
+                         <nav id="TOC" role="doc-toc">
+                            <!-- <p class="toc-title">Jump to section</p> -->
+               <ul>
+<li><a href="#how-to-edit-hidden-files-like-.bash_profile-in-visual-studio-code">How to edit hidden files like <code>~/.bash_profile</code> in Visual Studio Code</a></li>
+<li><a href="#how-to-edit-hidden-files-from-the-command-line">How to edit hidden files from the command line</a></li>
+</ul>
+            </nav>
+            
+<h2 id="how-to-edit-hidden-files-like-.bash_profile-in-visual-studio-code">How to edit hidden files like <code>~/.bash_profile</code> in Visual Studio Code</h2>
+<p>There are two ways (and probably more!) to open hidden files in Visual Studio Code.</p>
+<h3 id="drag-and-drop">Drag and drop</h3>
+<ol type="1">
+<li>Open up Finder</li>
+<li>Use the <strong>Command+Shift+.</strong> trick (from <a href="../listing-hidden-files/">listing hidden files</a>) to show all files</li>
+<li>Drag the hidden file to the Visual Studio Code icon.</li>
+</ol>
+<h3 id="using-the-open-menu">Using the open menu</h3>
+<ol type="1">
+<li>Open up VS Code</li>
+<li>Go to <strong>File &gt; Open</strong></li>
+<li>When you’re in the right directory, press <strong>Command+Shift+.</strong> to have hidden files show up (tip: they might already be visible!)</li>
+<li>Click the file and open it!</li>
+</ol>
+<h3 id="from-the-command-line">From the command line</h3>
+<ol type="1">
+<li>Install the <code>code</code> command <a href="https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line">see the VS Code documentation instructions</a></li>
+<li>From the directory, type <code>code .bash_profile</code> (substitute whatever name of the file you want to edit) and it will open in VS Code!</li>
+</ol>
+<h2 id="how-to-edit-hidden-files-from-the-command-line">How to edit hidden files from the command line</h2>
+<h3 id="using-a-command-line-text-editor">Using a command-line text editor</h3>
+<p>There are a lot of text editors that operate just on the command line. A few are <code>nano</code>, <code>vim</code>, and <code>emacs</code>.</p>
+<ol type="1">
+<li>Navigate to where your file is located (in this example, we’re editing <code>.bash_profile</code>)</li>
+<li>Type <code>nano .bash_profile</code> and hit enter</li>
+<li><code>.bash_profile</code> will be opened up in nano!</li>
+<li>When you’er ready, follow the instructions at the bottom of the screen to save and exit.</li>
+</ol>
+<blockquote>
+<p><strong>Tip:</strong> The <code>^</code> means “Control”, so for <code>^X</code> to exit you’ll hold down the control key and press the X key.</p>
+</blockquote>
+<h3 id="going-from-the-command-line-to-vs-code">Going from the command line to VS Code</h3>
+<p>You might be using the command line but want to hop right into editing a file in VS Code.</p>
+<ol type="1">
+<li>Install the <code>code</code> command <a href="https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line">see the VS Code documentation instructions</a></li>
+<li>From the directory, type <code>code .bash_profile</code> (substitute whatever name of the file you want to edit) and it will open in VS Code!</li>
+</ol>
+        </div>
+      </div>
+    </section>
+    
+  </body>
+</html>
