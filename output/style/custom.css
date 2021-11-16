@@ -118,9 +118,13 @@ ul li {
 }
 
 .content blockquote {
-    background-color: black;
-    border-left-color: #303030;
+    background-color: whitesmoke;
+    border-left-color: #afafaf;
     border-left-width: 20px;
+}
+
+.content blockquote p {
+    color: #121212;
 }
 
 .content pre {
@@ -145,4 +149,35 @@ ul li {
     width: auto;
     margin-left: auto;
     margin-right: auto;
+}
+
+.output.execute_result {
+    max-width: 100%;
+    overflow-y: scroll;
+}
+
+table {
+    border-color: white;
+}
+
+.cell.markdown {
+    margin-bottom: 2em;
+}
+
+.dataframe tbody tr th {
+    color: white;
+    font-weight: bold;
+}
+
+.content .cell.markdown pre {
+    background: none;
+}
+
+.content table td, .content table th {
+    border-width: 1px !important;
+}
+
+.content table {
+    font-size: 0.9em;
+    margin-bottom: 2em;
 }

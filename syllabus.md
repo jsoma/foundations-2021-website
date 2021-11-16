@@ -144,9 +144,13 @@ Showing off to the public, becoming friends and enemies with members of the inte
 
 Visiting the Chengdu of Python, wrangling data, loving it, hating it.
 
+* [Class 5 notes](../class-05/)
+
 ## Class 06: Cleaning data
 
 It's all we do to the point that [it was even in the NYT like sixty years ago](https://www.nytimes.com/2014/08/18/technology/for-big-data-scientists-hurdle-to-insights-is-janitor-work.html)
+
+* [Class 6 notes](../class-06/)
 
 ## Class 07-14: Descending into chaos, no order promised
 

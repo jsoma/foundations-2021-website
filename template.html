@@ -81,7 +81,14 @@
             $endif$
 
 $body$
-        </div>
+
+    $if(subfolder)$
+    <p style="text-align: center; margin-top: 4em;"><a href="../$subfolder$/">← back to $subfolder$</a></p>
+    $else$
+    <p style="text-align: center; margin-top: 4em;"><a href="../syllabus/">← go to syllabus</a></p>
+    $endif$
+
+      </div>
       </div>
     </section>
     $for(include-after)$ $include-after$ $endfor$
